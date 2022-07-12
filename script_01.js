@@ -8,5 +8,9 @@
 4. Ausgabe in Konsole :
 */
 
-
- 
+// module: console output | test:
+// output("hello");
+// output(20);
+function output(inputData) {
+    console.log(inputData)
+}
