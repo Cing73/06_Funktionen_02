@@ -3,24 +3,55 @@
 /*
 0. a+b / a-b/ a*b / a/b  // ergebnis c 
 1. Dateneingabe + -überprüfung :
-2. Auswahl Rechenart :
-3. Fkt. Grundrechenarten :
-4. Ausgabe in Konsole :
+2. Auswahl Rechenart : check!
+3. Fkt. Grundrechenarten :check!
+4. Ausgabe in Konsole : check!
 */
 
-// module: division a / b |  test:
+// application / App
+startApp();
+function startApp() {
+    output(calculator(getNumber(),getNumber(),getOp()));
+}
+function getNumber() {
+    return 2;
+}
 
-output(divide(2,3));
-output(divide(2,-3));
-output(divide(2.1,3.2));
-output(divide(2,0));
+
+function getOp() {
+    return "+";
+}
+
+
+// module: calculator | tests:
+function calculator(a,b,op) {
+
+    switch (op) {
+        case "+": // addition
+            return add(a,b);
+        case "-": // subtraction
+            return subtract(a,b);
+        case "*": // multiplication
+            return multiply(a,b);
+        case "/": // division
+            return divide(a,b);
+        default:    
+            return "Something went wrong!";
+    }
+ }
+
+
+// module: division a / b |  test:
+// output(divide(2,3));
+// output(divide(2,-3));
+// output(divide(2.1,3.2));
+// output(divide(2,0));
 function divide(a,b) {
     if (b == 0) {
        return "Division by 0 not possible!";
     } 
     return a / b;
-    }
-
+}
 
 // module: multiplication a * b |  test:
 
@@ -51,7 +82,6 @@ function subtract(a,b) {
 function add(a,b) {
     return a + b;
 }
-
 
 // module: console output | test:
 // output("hello");
