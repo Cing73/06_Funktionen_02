@@ -9,21 +9,28 @@
 */
 
 // application / App
-// startApp();
+startApp();
 function startApp() {
     output(calculator(getNumber("1"),getOp(),getNumber("2")));
 }
 
-
+// output(getNumber("1"));
 function getNumber(numTxt) {
+    
     const displayStr = "Bitte Zahl " + numTxt +  " eingeben:";
     let inputStr = prompt(displayStr);
     let num = parseInt(inputStr)
-    return num;
+    // if num is NOT valid AND user DIDN'T click at Abbrechen
+
+    while (isNaN(num) && (inputStr !== null)) {
+        inputStr =  prompt(displayStr);
+        num = parseInt(inputStr);
+    }
+        return num;
 }
 
 //module: input operator | Test:
-output(getOp());
+// output(getOp());
 function getOp() {
     const displayStr = "Bitte korrekten Operator ( + | - | * | / ) eingeben";
     let op = prompt(displayStr);
