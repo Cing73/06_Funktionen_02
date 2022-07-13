@@ -11,20 +11,25 @@
 // application / App
 startApp();
 function startApp() {
-    output(calculator(getNumber(),getNumber(),getOp()));
+    output(calculator(getNumber("1"),getOp(),getNumber("2")));
 }
-function getNumber() {
-    return 2;
+function getNumber(numTxt) {
+    const displayStr = "Bitte Zahl " + numTxt +  " eingeben:";
+    let inputStr = prompt(displayStr);
+    let num = parseInt(inputStr)
+    return num;
 }
 
 
 function getOp() {
-    return "+";
+    const displayStr = "Bitte korrekten Operator ( + | - | * | / ) eingeben";
+    let op = prompt(displayStr);
+    return op;
 }
 
 
 // module: calculator | tests:
-function calculator(a,b,op) {
+function calculator(a,op,b) {
 
     switch (op) {
         case "+": // addition
@@ -87,5 +92,11 @@ function add(a,b) {
 // output("hello");
 // output(20);
 function output(inputData) {
-    console.log(inputData)
+    console.log("The result is: " + inputData)
 }
+
+// TO DO:
+
+ // output(20) ---> "The result is: "  20 --check!
+
+ // output("Error") --> "Error"
