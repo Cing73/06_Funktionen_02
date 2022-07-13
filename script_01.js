@@ -13,6 +13,8 @@ startApp();
 function startApp() {
     output(calculator(getNumber("1"),getOp(),getNumber("2")));
 }
+
+
 function getNumber(numTxt) {
     const displayStr = "Bitte Zahl " + numTxt +  " eingeben:";
     let inputStr = prompt(displayStr);
@@ -92,7 +94,12 @@ function add(a,b) {
 // output("hello");
 // output(20);
 function output(inputData) {
-    console.log("The result is: " + inputData)
+    if (typeof inputData == "number") {
+        console.log("The result is: " + inputData);
+    } else {
+        console.log("Error: " + inputData);
+    }
+    
 }
 
 // TO DO:
